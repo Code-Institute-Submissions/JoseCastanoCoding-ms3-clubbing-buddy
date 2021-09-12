@@ -1,4 +1,9 @@
 import os
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 from flask import (
     Flask, flash, render_template, 
     redirect, request, session, url_for)
@@ -15,6 +20,13 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+cloudinary.config( 
+  cloud_name = "jose-cloudinary", 
+  api_key = "494171894259977", 
+  api_secret = "Vn3TYGyC-vR_ULtIQCCxzWbSy7M" 
+)
 
 
 @app.route("/")
