@@ -1,4 +1,4 @@
 $(document).ready(function () {
-    $('.carousel').carousel({fullWidth: "true"});
+    $('.carousel').carousel();
     $('.sidenav').sidenav({edge: "right"});
 });
