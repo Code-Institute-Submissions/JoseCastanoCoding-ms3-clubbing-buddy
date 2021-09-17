@@ -1,23 +1,68 @@
 {% extends "base_template.html" %}
 {% block content %}
 
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
+<div class="container">
+    <div class="row card hoverable">
+        <div class="card-content">
+            <h4 class="center black-text"><strong>Happy To Have You Here!</strong></h4>
+            <form action="{{ url_for('signup') }}" class="row s12" method="POST">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" minlength="3" maxlength="20" 
+                            name="first_name" pattern="^[a-zA-Z]{3,20}$" class="validate" required>
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" minlength="3" maxlength="20" 
+                            name="last_name" pattern="^[a-zA-Z]{3,20}$" class="validate" required>
+                        <label for="last_name">Last Name</label>
+                    </div>
                 </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="email" type="email" name="email" class="validate" required>
+                        <label for="email">Your Email</label>
+                        <span class="helper-text" data-error="wrong" data-success="right"></span>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="password" type="password" name="password" minlength="8"
+                                maxlength="20" pattern="^[a-zA-Z0-9]{8,20}$" class="validate" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-field col s6">
-                    <input type="text" class="datepicker">
-                    <label for="birthday">Birthday</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" name="birthday" class="datepicker" required>
+                        <label for="birthday">Your Birthday</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="username" type="text" name="username" minlength="8"
+                            maxlength="20" pattern="^[a-zA-Z0-9]{8,20}$" class="validate" required>
+                        <label for="username">Username</label>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="col s12">
+                    <p>
+                        <label for="checkbox">
+                            <input type="checkbox">
+                        </label>
+                    </p>
+                </div>
+                <div class="col s12 center">
+                    <button id="signup" type="submit" class="btn btn-large waves-effect waves-light blue">
+                        Sign Up For Free
+                        <i class="fas fa-user-plus right"></i>
+                    </button>
+                </div>
+                <div class="center black-text">
+                    <p>Already Registered With Us?
+                        <a href="{{ url_for('login') }}"> Log Back In</a></p>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
 
 {% endblock %}

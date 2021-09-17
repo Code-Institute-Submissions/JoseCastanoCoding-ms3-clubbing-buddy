@@ -37,6 +37,27 @@ def homepage():
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+    if request.method == "POST":
+        user_exists = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if user_exists:
+            flash("Username Already Registered!")
+            return redirect(url_for("signup"))
+
+        signup = {
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "email": request.form.get("email"),
+            "password": generate_password_hash(request.form.get("password")),
+            "birthday": request.form.get("birthday"),
+            "username": request.form.get("username").lower()
+        }
+        mongo.db.users.insert_one(signup)
+
+        session["user"] = request.form.get("username").lower()
+        flash("You Are Now Registered With Us!")
+
     return render_template("signup.html")
 
 
