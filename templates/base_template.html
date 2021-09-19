@@ -54,6 +54,17 @@
     {% block content %}
     {% endblock %}
 
+    <section class="content">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        {% for message in get_flashed_messages() %}
+        <div class="flash">
+            <h4 class="center-align">{{ message }}</h4>
+        </div>
+        {% endfor %}
+    </section>
+
     <footer class="page-footer">
         <div class="container">
             <div class="row">
@@ -81,7 +92,7 @@
         </div>
     </footer>
 
-    
+
 
 
 
