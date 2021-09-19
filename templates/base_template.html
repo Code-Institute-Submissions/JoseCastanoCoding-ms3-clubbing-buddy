@@ -35,7 +35,7 @@
                     <li><a href="#">Logout</a></li>
                     <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
                     <li><a href="#">Add Your Event</a></li>
-                    <li><a href="#">Buddies Area</a></li>
+                    <li><a href="{{ url_for('buddy_area', username=session['user']) }}">Buddies Area</a></li>
                     <li><a href="#">Search Event</a></li>
                 </ul>
             </div>
@@ -47,7 +47,7 @@
             <li><a href="#">Logout</a></li>
             <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
             <li><a href="#">Add Your Event</a></li>
-            <li><a href="#">Buddies Area</a></li>
+            <li><a href="{{ url_for('buddy_area', username=session['user']) }}">Buddies Area</a></li>
             <li><a href="#">Search Event</a></li>
         </ul>
     </header>
@@ -60,7 +60,7 @@
         </header>
         {% for message in get_flashed_messages() %}
         <div class="flash">
-            <h4 class="center-align">{{ message }}</h4>
+            <h4 class="center-align"><strong>{{ message }}</strong></h4>
         </div>
         {% endfor %}
     </section>

@@ -57,6 +57,7 @@ def signup():
 
         session["user"] = request.form.get("username").lower()
         flash("You Are Now Registered With Us!")
+        return redirect(url_for("buddy_area", username=session["user"]))
 
     return render_template("signup.html")
 
@@ -72,6 +73,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome Back {}".format(request.form.get("username")))
+                    return redirect(url_for("buddy_area", username=session["user"]))
             else:
                 flash("Oops! Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -81,6 +83,12 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/buddy_area/<username>", methods=["GET", "POST"])
+def buddy_area(username):
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    return render_template("buddy_area.html", username=username)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
