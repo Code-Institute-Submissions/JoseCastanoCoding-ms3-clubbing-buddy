@@ -1,44 +1,44 @@
 {% extends "base_template.html" %}
 {% block content %}
 
-<div class="container">
-    <div class="row card hoverable">
-        <div class="card-content">
-            <h4 class="center black-text"><strong>Log In</strong></h4>
-            <form action="{{ url_for('login') }}" class="row s12" method="POST">
-                <div class="col s12">
-                    <div class="input-field">
-                        <input id="username" type="text" name="username" placeholder="Your Username" required>
-                        <label for="username">Your Username</label>
+    <div class="container">
+        <div class="row card hoverable">
+            <div class="card-content">
+                <h4 class="center black-text"><strong>Log In</strong></h4>
+                <form action="{{ url_for('login') }}" class="row s12" method="POST">
+                    <div class="col s12">
+                        <div class="input-field">
+                            <input id="username" type="text" name="username" placeholder="Your Username" required>
+                            <label for="username">Your Username</label>
+                        </div>
                     </div>
-                </div>
-                <div class="col s12">
-                    <div class="input-field">
-                        <input id="password" type="password" name="password" placeholder="Your Password" required>
-                        <label for="password">Your Password</label>
+                    <div class="col s12">
+                        <div class="input-field">
+                            <input id="password" type="password" name="password" placeholder="Your Password" required>
+                            <label for="password">Your Password</label>
+                        </div>
                     </div>
-                </div>
-                <div class="col s12">
-                    <p>
-                        <label for="">
-                            <input type="checkbox">
-                        </label>
-                    </p>
-                </div>
-                <div class="col s12 center">
-                    <button id="login" type="submit" class="btn btn-large waves-effect waves-light blue">
-                        Login
-                        <i class="fas fa-sign-in-alt right"></i>
-                    </button>
-                </div>
-                <div class="center black-text">
-                    <p>Don't have an account yet? 
-                        <a href="{{ url_for('signup') }}"> Sign Up for Free!</a></p>
-                </div>
-            </form>
+                    <div class="col s12">
+                        <p>
+                            <label for="">
+                                <input type="checkbox">
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s12 center">
+                        <button id="login" type="submit" class="btn btn-large waves-effect waves-light blue">
+                            Login
+                            <i class="fas fa-sign-in-alt right"></i>
+                        </button>
+                    </div>
+                    <div class="center black-text">
+                        <p>Don't have an account yet? 
+                            <a href="{{ url_for('signup') }}"> Sign Up for Free!</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 
 {% endblock %}
