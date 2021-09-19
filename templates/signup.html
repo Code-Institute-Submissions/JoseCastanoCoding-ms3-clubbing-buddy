@@ -4,25 +4,29 @@
 <div class="container">
     <div class="row card hoverable">
         <div class="card-content">
-            <h4 class="center black-text"><strong>Happy To Have You Here!</strong></h4>
+            <h4 class="center black-text"><strong>Sign Up</strong></h4>
             <form action="{{ url_for('signup') }}" class="row s12" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="first_name" type="text" minlength="3" maxlength="20" 
                             name="first_name" pattern="^[a-zA-Z]{3,20}$" class="validate" required>
                         <label for="first_name">First Name</label>
+                        <span class="helper-text" data-error="Only alphabetic characters are allowed here!" 
+                            data-success="That's right :)"></span>
                     </div>
                     <div class="input-field col s6">
                         <input id="last_name" type="text" minlength="3" maxlength="20" 
                             name="last_name" pattern="^[a-zA-Z]{3,20}$" class="validate" required>
                         <label for="last_name">Last Name</label>
+                        <span class="helper-text" data-error="Only alphabetic characters are allowed here!" 
+                            data-success="That's right :)"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="email" type="email" name="email" class="validate" required>
                         <label for="email">Your Email</label>
-                        <span class="helper-text" data-error="wrong" data-success="right"></span>
+                        <span class="helper-text" data-error="We need a valid email address please!" data-success="That's right :)"></span>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
@@ -58,7 +62,7 @@
                 </div>
                 <div class="center black-text">
                     <p>Already Registered With Us?
-                        <a href="{{ url_for('login') }}"> Log Back In</a></p>
+                        <a href="{{ url_for('login') }}">Log Back In</a></p>
                 </div>
             </form>
         </div>

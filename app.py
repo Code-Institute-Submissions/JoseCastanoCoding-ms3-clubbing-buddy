@@ -87,8 +87,20 @@ def login():
 
 @app.route("/buddy_area/<username>", methods=["GET", "POST"])
 def buddy_area(username):
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    return render_template("buddy_area.html", username=username)
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    
+    if session["user"]:
+        return render_template("buddy_area.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    flash("Hope to see you back soon!")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
