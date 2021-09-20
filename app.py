@@ -85,13 +85,13 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/buddy_area/<username>", methods=["GET", "POST"])
-def buddy_area(username):
+@app.route("/buddies_area/<username>", methods=["GET", "POST"])
+def buddies_area(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     
     if session["user"]:
-        return render_template("buddy_area.html", username=username)
+        return render_template("buddies_area.html", username=username)
 
     return redirect(url_for("login"))
 
@@ -103,9 +103,24 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_your_event")
+@app.route("/add_your_event", methods=["GET", "POST"])
 def add_your_event():
-    return render_template("add_your_event.hmtl")
+    if request.method == "POST":
+        event = {
+            "type_of_event": request.form.get("type_of_event"),
+            "event_name": request.form.get("event_name"),
+            "type_of_music": request.form.get("type_of_music"),
+            "event_date": request.form.get("event_date"),
+            "event_location": request.form.get("event_location"),
+            "created_by": session["user"]
+        }
+        mongo.db.yourEvents.insert_one(event)
+        flash("Your Event Has Been Added :)")
+        return redirect(url_for("buddy_area"))
+
+    music = mongo.db.music.find().sort("type_of_music", 1)
+    events = mongo.db.events.find().sort("type_of_event", 1)
+    return render_template("add_your_event.html", music=music, events=events)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
