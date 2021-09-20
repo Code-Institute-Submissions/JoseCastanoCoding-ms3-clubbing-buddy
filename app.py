@@ -91,7 +91,9 @@ def buddies_area(username):
         {"username": session["user"]})["username"]
     
     if session["user"]:
-        return render_template("buddies_area.html", username=username)
+        events = mongo.db.yourEvents.find(
+            {"created_by": session["user"]})
+        return render_template("buddies_area.html", username=username, events=events)
 
     return redirect(url_for("login"))
 

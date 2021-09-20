@@ -4,7 +4,7 @@
 
 [View the live project here](https://git.heroku.com/ms3-clubbing-buddy.git)
 
-<img src="" width="600" height="400" />
+<img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1631410873/7f811e7ff8d949f7b671ddf6f29ae372_dlqzlc.png" width="500" height="300" />
 
 Clubbing Buddy is a website aimed to help club-goers, ravers and people with an interest in music festivals and gigs, to find companions to go to such events with. The visitors will be given the options to open an account and have a profile that diplays the events they are planning to attend, as well as being able to see what events other users are going to. Think of how many times you have wanted to go to a gig but had no one to go with, or perhaps your partner or friend/s let you down very short notice? This platform could well be the solution to that last minute problem.
 

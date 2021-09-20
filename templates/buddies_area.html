@@ -10,10 +10,10 @@
                 <h4 class="center black-text"><strong>These Are Your Events {{ username }}</strong></h4>
             </div>
             <ul class="collapsible popout">
-                {% for yourEvent in yourEvents %}
+                {% for event in events %}
                     <li>  
-                        <div class="collapsible-header"></div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        <div class="collapsible-header">{{ event.event_name }}</div>
+                        <div class="collapsible-body"><span>{{event.type_of_event}}</span></div>
                     </li>
                 {% endfor %}
             </ul>

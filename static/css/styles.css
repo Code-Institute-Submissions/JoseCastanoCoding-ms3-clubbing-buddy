@@ -1,3 +1,20 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+nav .brand-logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #212121;
+    padding-left: 10px;
+}
+
 nav ul a {
     font-size: 25px;
     font-weight: 700;
