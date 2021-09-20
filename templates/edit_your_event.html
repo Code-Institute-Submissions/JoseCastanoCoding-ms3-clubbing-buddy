@@ -4,15 +4,19 @@
     <div class="container">
         <div class="row card hoverable">
             <div class="card-content">
-                <h4 class="center black-text"><strong>Add Your Event</strong></h4>
+                <h4 class="center black-text"><strong>Edit Your Event</strong></h4>
             </div>
-            <form action="{{ url_for('add_your_event') }}" class="row s12" method="POST">
+            <form action="{{ url_for('edit_your_event', yourEvent_id=yourEvent._id) }}" class="row s12" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
                         <select id="type_of_event" name="type_of_event" class="validate" required>
                             <option value="" disabled selected>Type Of Event</option>
                             {% for e in events %}
-                            <option value="{{ e.type_of_event }}">{{ e.type_of_event }}</option>
+                                {% if e.type_of_event == yourEvent.type_of_event %}
+                                <option value="{{ e.type_of_event }}" selected>{{ e.type_of_event }}</option>
+                                {% else %}
+                                    <option value="{{ e.type_of_event }}">{{ e.type_of_event }}</option>
+                                {% endif %}
                             {% endfor %}
                         </select>
                     </div>
@@ -26,7 +30,10 @@
                         <select id="type_of_music" name="type_of_music" class="validate" required>
                             <option value="" disabled selected>Type Of Music</option>
                             {% for m in music %}
-                            <option value="{{ m.type_of_music }}">{{ m.type_of_music }}</option>
+                                {% if m.type_of_music == yourEvent.type_of_music %}
+                                <option value="{{ m.type_of_music }}" selected>{{ m.type_of_music }}</option>
+                                {% else %}
+                                <option value="{{ m.type_of_music }}">{{ m.type_of_music }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -43,8 +50,8 @@
                     </div>
                     <div class="col s3">
                         <button id="add_your_event" type="submit" class="btn btn-large waves-effect waves-light blue">
-                            Add Your Event
-                            <i class="fas fa-plus-square right"></i>
+                            Edit Your Event
+                            <i class="fas fa-wrench"></i>
                         </button>
                     </div>
                     <div class="col s3">

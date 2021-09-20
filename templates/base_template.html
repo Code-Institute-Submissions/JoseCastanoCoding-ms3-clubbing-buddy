@@ -33,7 +33,7 @@
                     <li><a href="{{ url_for('homepage') }}">Home</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('add_your_event', username=session['user']) }}">Add Your Event</a></li>
-                        <li><a href="{{ url_for('buddy_area', username=session['user']) }}">Buddies Area</a></li>
+                        <li><a href="{{ url_for('buddies_area', username=session['user']) }}">Buddies Area</a></li>
                         <li><a href="#">Search Event</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
@@ -48,7 +48,7 @@
             <li><a href="{{ url_for('homepage') }}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('add_your_event', username=session['user']) }}">Add Your Event</a></li>
-                <li><a href="{{ url_for('buddy_area', username=session['user']) }}">Buddies Area</a></li>
+                <li><a href="{{ url_for('buddies_area', username=session['user']) }}">Buddies Area</a></li>
                 <li><a href="#">Search Event</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}

@@ -6,6 +6,17 @@
             <div class="card-content">
                 <h4 class="center black-text"><strong>Hello! {{ username }}</strong></h4>
             </div>
+            <div class="card-content">
+                <h4 class="center black-text"><strong>These Are Your Events {{ username }}</strong></h4>
+            </div>
+            <ul class="collapsible popout">
+                {% for yourEvent in yourEvents %}
+                    <li>  
+                        <div class="collapsible-header"></div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 
