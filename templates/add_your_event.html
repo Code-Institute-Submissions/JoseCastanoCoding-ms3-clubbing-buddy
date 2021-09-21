@@ -11,8 +11,8 @@
                     <div class="input-field col s6">
                         <select id="type_of_event" name="type_of_event" class="validate" required>
                             <option value="" disabled selected>Type Of Event</option>
-                            {% for e in events %}
-                            <option value="{{ e.type_of_event }}">{{ e.type_of_event }}</option>
+                            {% for event in events %}
+                            <option value="{{ event.type_of_event }}">{{ event.type_of_event }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -42,13 +42,14 @@
                         <label for="event_location">Event Location</label>
                     </div>
                     <div class="col s3">
-                        <button id="add_your_event" type="submit" class="btn btn-large waves-effect waves-light blue">
+                        <button id="add" type="submit" 
+                            class="btn btn-large waves-effect waves-light blue">
                             Add Your Event
                             <i class="fas fa-plus-square right"></i>
                         </button>
                     </div>
                     <div class="col s3">
-                        <button id="reset" type="reset"
+                        <button id="reset" type="submit"
                             class="btn btn-large waves-effect waves-light blue">
                             Reset
                             <i class="fas fa-ban"></i>

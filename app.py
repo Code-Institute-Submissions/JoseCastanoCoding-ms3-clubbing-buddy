@@ -91,7 +91,7 @@ def buddies_area(username):
         {"username": session["user"]})["username"]
     
     if session["user"]:
-        events = mongo.db.yourEvents.find(
+        events = mongo.db.events.find(
             {"created_by": session["user"]})
         return render_template("buddies_area.html", username=username, events=events)
 
@@ -112,39 +112,46 @@ def add_your_event():
             "type_of_event": request.form.get("type_of_event"),
             "event_name": request.form.get("event_name"),
             "type_of_music": request.form.get("type_of_music"),
-            "event_date": request.form.get("event_date"),
+            "event_date": request.form.get("date"),
             "event_location": request.form.get("event_location"),
             "created_by": session["user"]
         }
-        mongo.db.yourEvents.insert_one(event)
+        mongo.db.events.insert_one(event)
         flash("Your Event Has Been Added :)")
         return redirect(url_for("buddies_area", username=session["user"]))
 
-    music = mongo.db.music.find().sort("type_of_music", 1)
-    events = mongo.db.events.find().sort("type_of_event", 1)
+    music = mongo.db.music_type.find().sort("type_of_music", 1)
+    events = mongo.db.events_type.find().sort("type_of_event", 1)
     return render_template("add_your_event.html", music=music, events=events)
 
 
-@app.route("/edit_your_event/<yourEvent_id>", methods=["GET", "POST"])
-def edit_event(yourEvent_id):
+@app.route("/edit_your_event/<event_id>", methods=["GET", "POST"])
+def edit_your_event(event_id):
     if request.method == "POST":
         edit = {
             "type_of_event": request.form.get("type_of_event"),
             "event_name": request.form.get("event_name"),
             "type_of_music": request.form.get("type_of_music"),
-            "event_date": request.form.get("event_date"),
+            "event_date": request.form.get("date"),
             "event_location": request.form.get("event_location"),
             "created_by": session["user"]
         }
-        mongo.db.yourEvents.update({"_id": ObjectId(yourEvent_id)}, edit)
+        mongo.db.events.update({"_id": ObjectId(event_id)}, edit)
         flash("Your Event Has Been Updated :)")
     
-    yourEvent = mongo.db.yourEvents.find_one({"_id": ObjectId(yourEvent_id)})
+    event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
 
-    music = mongo.db.music.find().sort("type_of_music", 1)
-    events = mongo.db.events.find().sort("type_of_event", 1)
+    music = mongo.db.music_type.find().sort("type_of_music", 1)
+    events = mongo.db.events_type.find().sort("type_of_event", 1)
     return render_template(
-        "edit_your_event.html", yourEvent=yourEvent, music=music, events=events)
+        "edit_your_event.html", event=event, music=music, events=events)
+
+
+@app.route("/delete_your_event/<event_id>")
+def delete_your_event(event_id):
+    mongo.db.events.remove({"_id": ObjectId(event_id)})
+    flash("Your Event Has Been Deleted :)")
+    return redirect(url_for("buddies_area", username=session["user"]))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
