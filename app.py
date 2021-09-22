@@ -85,6 +85,13 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/search_event", methods=["GET", "POST"])
+def search_event():
+    search = request.form.get("search")
+    events = list(mongo.db.events.find({"$text": {"$search_event": search}}))
+    return render_template("buddies_area.html", events=events)
+
+
 @app.route("/buddies_area/<username>", methods=["GET", "POST"])
 def buddies_area(username):
     username = mongo.db.users.find_one(
@@ -138,13 +145,14 @@ def edit_your_event(event_id):
         }
         mongo.db.events.update({"_id": ObjectId(event_id)}, edit)
         flash("Your Event Has Been Updated :)")
+        return redirect(url_for("buddies_area", username=session["user"]))
     
-    event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
+    eventId = mongo.db.events.find_one({"_id": ObjectId(event_id)})
 
     music = mongo.db.music_type.find().sort("type_of_music", 1)
     events = mongo.db.events_type.find().sort("type_of_event", 1)
     return render_template(
-        "edit_your_event.html", event=event, music=music, events=events)
+        "edit_your_event.html", eventId=eventId, music=music, events=events)
 
 
 @app.route("/delete_your_event/<event_id>")
@@ -152,6 +160,13 @@ def delete_your_event(event_id):
     mongo.db.events.remove({"_id": ObjectId(event_id)})
     flash("Your Event Has Been Deleted :)")
     return redirect(url_for("buddies_area", username=session["user"]))
+
+
+@app.route("/cancel")
+def cancel():
+    flash("You Have Not Added/Edited Your Event :)")
+    return redirect(url_for("buddies_area", username=session["user"]))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

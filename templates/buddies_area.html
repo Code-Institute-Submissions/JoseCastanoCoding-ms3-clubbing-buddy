@@ -9,21 +9,23 @@
             </div>
             <ul class="collapsible popout">
                 {% for event in events %}
-                    <li>  
-                        <div class="collapsible-header"><i class="fas fa-monument"></i>{{ event.event_name }}
-                            <div class="col s3">
-                                <a href="{{ url_for('edit_your_event', event_id=event._id) }}" class="btn-small green accent-4">Edit</a>
-                                <a href="{{ url_for('delete_your_event', event_id=event._id) }}" class="btn-small green accent-4">Delete</a>
-                            </div>                                                                         
+                <li>
+                    <div class="collapsible-header"><i class="fas fa-monument"></i>{{ event.event_name }}
+                        <div class="col s3">
+                            <a href="{{ url_for('edit_your_event', event_id=event._id) }}"
+                                class="btn-small green accent-4">Edit</a>
+                            <a href="{{ url_for('delete_your_event', event_id=event._id) }}"
+                                class="btn-small green accent-4">Delete</a>
                         </div>
-                        <div class="collapsible-body">
-                            <h5><i class="fas fa-place-of-worship"></i> Type of Event: {{event.type_of_event}}</h5>
-                            <h5><i class="fas fa-music"></i> Type of Music: {{event.type_of_music}}</h5>
-                            <h5><i class="fas fa-calendar-alt"></i> Date: {{event.event_date}}</h5>
-                            <h5><i class="fas fa-globe"></i> Where: {{event.event_location}}</h5>
-                            <h5><i class="fas fa-user"></i> Event Added By: {{event.created_by}}</h5>
-                        </div>
-                    </li>
+                    </div>
+                    <div class="collapsible-body">
+                        <h5><i class="fas fa-place-of-worship"></i> Type of Event: {{event.type_of_event}}</h5>
+                        <h5><i class="fas fa-music"></i> Type of Music: {{event.type_of_music}}</h5>
+                        <h5><i class="fas fa-calendar-alt"></i> Date: {{event.event_date}}</h5>
+                        <h5><i class="fas fa-globe"></i> Where: {{event.event_location}}</h5>
+                        <h5><i class="fas fa-user"></i> Event Added By: {{event.created_by}}</h5>
+                    </div>
+                </li>
                 {% endfor %}
             </ul>
         </div>

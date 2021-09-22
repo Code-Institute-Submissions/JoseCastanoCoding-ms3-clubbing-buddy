@@ -1,64 +1,62 @@
 {% extends "base_template.html" %}
 {% block content %}
 
-    <div class="container">
-        <div class="row card hoverable">
-            <div class="card-content">
-                <h4 class="center black-text"><strong>Add Your Event</strong></h4>
-            </div>
-            <form action="{{ url_for('add_your_event') }}" class="row s12" method="POST">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <select id="type_of_event" name="type_of_event" class="validate" required>
-                            <option value="" disabled selected>Type Of Event</option>
-                            {% for event in events %}
-                            <option value="{{ event.type_of_event }}">{{ event.type_of_event }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="event_name" type="text" name="event_name" class="validate" required>
-                        <label for="event_name">Event Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <select id="type_of_music" name="type_of_music" class="validate" required>
-                            <option value="" disabled selected>Type Of Music</option>
-                            {% for m in music %}
-                            <option value="{{ m.type_of_music }}">{{ m.type_of_music }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="input-field col s6">
-                        <input type="text" name="date" class="datepicker" required>
-                        <label for="date">Date Of Event</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="event_location" type="text" minlength="3" maxlength="20" name="event_location"
-                            pattern="^[a-zA-Z]{3,20}$" class="validate" required>
-                        <label for="event_location">Event Location</label>
-                    </div>
-                    <div class="col s3">
-                        <button id="add" type="submit" 
-                            class="btn btn-large waves-effect waves-light blue">
-                            Add Your Event
-                            <i class="fas fa-plus-square right"></i>
-                        </button>
-                    </div>
-                    <div class="col s3">
-                        <button id="reset" type="submit"
-                            class="btn btn-large waves-effect waves-light blue">
-                            Reset
-                            <i class="fas fa-ban"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+<div class="container">
+    <div class="row card hoverable">
+        <div class="card-content">
+            <h4 class="center black-text"><strong>Add Your Event</strong></h4>
         </div>
+        <form action="{{ url_for('add_your_event') }}" class="row s12" method="POST">
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="type_of_event" name="type_of_event" class="validate" required>
+                        <option value="" disabled selected>Type Of Event</option>
+                        {% for event in events %}
+                        <option value="{{ event.type_of_event }}">{{ event.type_of_event }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <input id="event_name" type="text" name="event_name" class="validate" required>
+                    <label for="event_name">Event Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="type_of_music" name="type_of_music" class="validate" required>
+                        <option value="" disabled selected>Type Of Music</option>
+                        {% for m in music %}
+                        <option value="{{ m.type_of_music }}">{{ m.type_of_music }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" name="date" class="datepicker" required>
+                    <label for="date">Date Of Event</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="event_location" type="text" minlength="3" maxlength="20" name="event_location"
+                        pattern="^[a-zA-Z]{3,20}$" class="validate" required>
+                    <label for="event_location">Event Location</label>
+                </div>
+                <div class="col s3">
+                    <button id="add" type="submit" class="btn btn-large waves-effect waves-light blue">
+                        Add Your Event
+                        <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+                <div class="col s3">
+                    <a href="{{ url_for('cancel') }}" class="btn btn-large waves-effect waves-light blue">
+                        Cancel
+                        <i class="fas fa-ban"></i>
+                    </a>
+                </div>
+            </div>
+        </form>
     </div>
+</div>
 
 
 {% endblock %}
