@@ -98,83 +98,71 @@ All the images I used for my project can be seen as below:
 
 I used the site [Unsplash](https://unsplash.com/) to download all my images I have used in my project.
 
-## Wireframes
+## Wireframes (From top to bottom, left to right: Home Page, Login Page, SignUp Page, Buddies Area Page, Add your event Page, Edit your event Page and All events Page)
 
-### Smartphone Wireframes
+ ### Smartphone Wireframes
 
 <div>
-    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Home_Page_eu8tbb.png" width="300" height="100" />
-    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Login_jyjpaf.png" width="300" height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Home_Page_eu8tbb.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Login_jyjpaf.png" width="300" height="300" />
     <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/SignUp_wclsvj.png" width="300"
-    height="100" />
-    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Buddies_Area_wgycue.png" width="300" height="100" />
-    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Add_your_event_rzl5o4.png" width="300" height="100" />
-    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Edit_your_event_ylwbrb.png" width="300" height="100" />
-    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/All_events_uedttl.png" width="300" height="100" />
+    height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Buddies_Area_wgycue.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Add_your_event_rzl5o4.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Edit_your_event_ylwbrb.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/All_events_uedttl.png" width="300" height="300" />
+</div>
+
+ ### Ipad Wireframes
+
+<div>
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632303546/Home_page_nto8vs.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632303547/Login_nbkgdk.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632303548/signup_qypa53.png" width="300"
+    height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632303546/buddies_area_rie2m5.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632303546/add_your_event_sr3nnm.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632303546/edit_your_event_xxx59x.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632303546/all_events_bndmab.png" width="300" height="300" />
+</div>
+
+ ### Desktop Wireframes
+
+<div>
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632305019/home_page_yzyrdp.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632305019/login_nh75db.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632305019/signup_c3cnnb.png" width="300"
+    height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632305019/buddies_area_naqujz.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632305018/add_your_event_ghzela.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632305018/edit_your_event_w1uluh.png" width="300" height="300" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632305019/all_events_dmu8rb.png" width="300" height="300" />
 </div>
 
 ## Features
 
-The site counts with 1 pages in total, where the user can choose from two
+The site counts with 3 pages (Home Page, Login Page, SignUp Page) that are visible to all visitors, and 4 additional pages (Buddies Area Page, Add your event Page, Edit your event Page and All events Page) that can be accessed only if the visitor has previously registered an account with Clubbing Buddy, obtaining login credentials.
 
 ### Existing Features
 
-- It is responsive to screen size thanks to bootstrap and the media queries I have put in place.
-
-- There are 9 possible combinations of user choices from the drop-downs, as per the table below:
-
-    SKILL LEVEL | FITNESS LEVEL | MTB TRAIL
-    ----------- | ------------- | ---------
-    BEGGINER | AVERAGE | STANMER PARK  
-    BEGGINER | FIT | STANMER PARK
-    BEGGINER | SUPER FIT! | FRISTON FOREST
-    INTERMEDIATE | AVERAGE | STANMER PARK
-    INTERMEDIATE | FIT | FRISTON FOREST
-    INTERMEDIATE | SUPER FIT! | SURREY HILLS
-    ADVANCED | AVERAGE | STANMER PARK
-    ADVANCED | FIT | FRISTON FOREST
-    ADVANCED | SUPER FIT! | SURREY HILLS
-
- 1.	If the user selects beginner (skills) and average (fitness levels), the mtb trail we recommend is Stanmer Park.
- 2. If the user selects beginner (skills) and fit (fitness levels), the mtb trail we recommend is Stanmer Park.
- 3. If the user selects beginner (skills) and super fit! (fitness levels), the mtb trail we recommend is Friston Forest.
- 4. If the user selects intermediate (skills) and average (fitness levels), the mtb trail we recommend is Stanmer Park.
- 5. If the user selects intermediate (skills) and fit (fitness levels), the mtb trail we recommend is Friston Forest.
- 6. If the user selects intermediate (skills) and super fit! (fitness levels), the mtb trail we recommend is Surrey Hills.
- 7. If the user selects advanced (skills) and average (fitness levels), the mtb trail we recommend is Stanmer Park.
- 8. If the user selects advanced (skills) and fit (fitness levels), the mtb trail we recommend is Friston Forest.
- 9. If the user selects advanced (skills) and super fit! (fitness levels), the mtb trail we recommend is Surrey Hills.
-
-- RESULTS BASED ON USER CHOSEN OPTIONS
-
-1. If the result is Stanmer Park, the home page will display a picture of Stanmer Park and 3 interactive buttons to show:
-    - 1.1 The distance to cover going uphill.
-    - 1.2 The distance to cover going downhill.
-    - 1.3 Tips about Stanmer Park trails.
-- The home page will, also, display a google maps api integration and a contact form, using mailjs api integration to get in touch with us to find out more about the trails at Stanmer Park.
-
-2. If the result is Friston Forest, the home page will display a picture of Friston Forest and 3 interactive buttons to show:
-    - 2.1 The distance to cover going uphill.
-    - 2.2 The distance to cover going downhill.
-    - 2.3 Tips about Friston Forest trails.
-- The home page will, also, display a google maps api integration and a contact form, using mailjs api integration to get in touch with us to find out more about the trails at       Friston Forest.
-
-3. If the result is Surrey Hills, the home page will display a picture of Surrey Hills and 3 interactive buttons to show:
-    - 2.1 The distance to cover going uphill.
-    - 2.2 The distance to cover going downhill.
-    - 2.3 Tips about Surrey Hills trails.
-- The home page will, also, display a google maps api integration and a contact form, using mailjs api integration to get in touch with us to find out more about the trails at Surrey Hills.
+- It is responsive to screen size thanks to <a href="https://materializecss.com/">Materialize CSS</a>
+- Once registered, an user will be able to add events, edit events and see all events that have been posted by other users.
+- Once registered, an user will have the ability to search for other events in the search box that is located above all the events listed in all_events.html
 
 ### Features left to implement
 
-- 
+- Facilitate users to contact each other via email by implementing some mail.js functionality.
   
  ##### back to [contents](#table-of-contents)
 
 ---
 ## Technologies Used
 
-- Languages : HTML, CSS, Bootstrap framework and Javascript.
+- Languages : HTML, CSS, Materializecss framework, Javascript and Python.
+
+- Backend development : Flask, Jinja, MongoDB, Python and Werkzeug
+
+- Cloudinary : [Cloudinary](https://cloudinary.com/) Automatically optimize and deliver images and videos
 
 - IDE: [Gitpod](https://www.gitpod.io/) (runs Visual Studio code online).
 
@@ -188,11 +176,7 @@ The site counts with 1 pages in total, where the user can choose from two
 
 - Icons : [Fontawesome](https://fontawesome.com/)
 
-- Hover effects : [Hover.css](https://ianlunn.github.io/Hover/#effects)
-
-- Colour Picker : [colourpicker](https://www.w3schools.com/colors/colors_picker.asp)
-
-- RGB Generator : [rgbgenerator](https://www.coolgenerator.com/rgb-color-generator)
+- 
 
 ##### back to [contents](#table-of-contents)  
 
@@ -205,7 +189,7 @@ The site counts with 1 pages in total, where the user can choose from two
 
  The results of such test can be seen as below:
 
- <img src="assets/images/readme-images-and-documentation/loadingspeed.PNG" width="400" height="300" />
+ <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632308032/toolspingdom_test_hsujp3.png" width="400" height="300" />
 
  - [W3C CSS Validator - Results](https://jigsaw.w3.org/css-validator/validator)
  - [W3C Markup Validator - Results](https://validator.w3.org/nu/#textarea)
@@ -231,33 +215,18 @@ The site counts with 1 pages in total, where the user can choose from two
 
 -  ### <h3>First Time Visitor Goals</h3>
 
-    1. As a First Time Visitor, I want to browse through the catalogue of products and make enquiries for items I want to purchase.
-        - This has been tested and an user will be more than able to browse through the sections of the shop and select any items, by clicking on the call-to-action buttons to buy the product.
-    2. As a First Time Visitor, I want to analyse the site and evaluate how easy it is to navigate throught it in order to check the products and content.
-        - Navigation menu works perfectly, and each section has an underline efect to make sure the user sees where he/she goes next. On smaller devices such as smartphones, the menu will toggle and
-        still will have all the functionality an user needs.
-    3. As a First Time Visitor, I want to verify testimonials about the quality of the service and find out what real people think about the website. I will also corroborate
-        all their social media channels by clicking on the social media icons displayed on the site, with the aim of getting a deeper insight of their followings on each of the social
-        media platforms they are part of.
-        - Testimonials are shown right on the home page, and all the links to social media channels are working accordingly.
+    1. As a First Time Visitor, 
+    2. As a First Time Visitor, 
+    3. As a First Time Visitor, 
+        - 
 
 -  ### <h3>Returning Visitor Goals</h3>
 
-    1. As a Returning Visitor, I might want to place an order or follow up on an enquiry I recently made.
-        - All buttons to buy products are fully working so the user will be more than able to perfom such action.
-    2. As a Returning Visitor, I want to check any possible new releases or products available on the website.
-        - The website will be updated with new products on a daily basis so users can come back and check the latest releases.
-    3. As a Returning Visitor, I want to keep up with any promotions running via the official social media accounts of The Vinyl Aficionado website.
-        - Social media channels will always be available for the users just by clicking on the links provided on the site.
+    1. As a Returning Visitor, 
 
 ### Bugs and some other challenges    
 
-One of the navigation items (shop) tends to come off the alignment with the rest of the items. I managed to apply some padding and center it with the rest of items. However, I have
-noticed that, when being in one of the pages of the shop, the item comes off although we are probably talking a quarter of a cm.
 
-The Carousel slider from bootstrap was challenging and I very much enjoyed breaking down the code and implementing a first slide that will be the main sign of identity of my website, visually speaking.
-
-The markup of my HTML showed (as previously mentioned) a piece of non-valid code. I was able to fix the issue by using the following [Bootstrap navbar documents](https://getbootstrap.com/docs/5.0/components/dropdowns/)
 
 ### Final layout
 
@@ -286,7 +255,7 @@ The project was deployed to GitHub Pages using the following steps...
 You may wish to contribute to this website and have your contribution published, if so, you are welcome to follow these steps below.
 
 1. Log in to GitHub and locate the GitHub Repository
-2. Open https://josecastanocoding.github.io/the-vinyl-aficionado/ 
+2. Open https://github.com/JoseCastanoCoding/ms3-clubbing-buddy 
 3. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 4. You should now have a copy of the original repository in your GitHub account.
 
@@ -294,7 +263,7 @@ You may wish to contribute to this website and have your contribution published,
 
 If you prefer working on the repository locally, you can clone the repository to your desktop by the following steps.
 
-1. Go to [the vinyl aficionado github page](https://josecastanocoding.github.io/the-vinyl-aficionado/)
+1. Go to [the clubbing buddy github page](https://josecastanocoding.github.io/ms3-clubbing-buddy/)
 2. Under the repository name, click "Clone or download".
 3. - To clone the repository using HTTPS, under "Clone with HTTPS", click the paste icon. 
    - To clone the repository using an SSH key, click Use SSH, then click the paste icon. 
@@ -304,34 +273,82 @@ If you prefer working on the repository locally, you can clone the repository to
 5. Type 'git clone', then paste the URL you copied earlier above. 
 6. Press Enter to create your local clone.
 
+### Heroku
+### Signing Up To Heroku
+
+* Navigate to [Heroku](https://heroku.com)
+* Once there click sign-up and create a new account
+* Select Python as your Primary Development Language
+* You will receive a confirmation email with a link to validate your account. If you do not receive the link within 15 minutes check your spam folder, or contact Heroku directly.
+* Enter a password
+
+### Create a New Heroku App
+
+* Click "Create New App", name your app something unique (Do not use any spaces, uses hyphens "-")
+* Choose the closest region from the list
+* Click "Create App"
+
+### Heroku Toolbelt
+
+* In the terminal type, "npm instal; -g heroku"
+* Log into heroku using the command "heroku login" in your terminal
+* Log in using your previously used details.
+* Enter the command, "heroku apps". This will show which apps you have
+* In the terminal enter, "--app (apps name)"
+
+### Pushing to Heroku
+
+* Add all your files to the staging area by using, "git add -A" or "git add ."
+* Your commit messsage will be, "Deployment to Heroku"
+* Go back to the heroku site, and head to "settings" for the app. Copy the Heroku Git URL
+* In the terminal type, "git remote add", and for the name, "heroku". Then paste the URL.
+
+### requirements.txt
+
+* Create requirements.txt type, "pip3 freeze --local > requirements.txt"
+* Add file to staging area, "git add ."
+* Commit message type, "Add requirements.txt"
+* Push file to heroku, "git push -u heroku master"
+
+### Procfile
+
+* In terminal type, "echo web: python run.py > Procfile" (Has to be a capital P for Procfile)
+* git add Procfile
+* git commit -m "Add Procfile"
+* and git push
+* In settings find "Reveal Config Vars"
+* Add the key"IP" and value of "0.0.0.0"
+* Add the key "PORT" and the value of "5000"
+* Add the "SECRET_KEY", and the value of the key in your env.py file"
+* Click the deply tab, And connect to GitHub
+* Get your repository name, paste it into Heroku and click Search
+* Your repository should show up, click connect.
+* Go back to your terminal, type "git remote rm heroku"
+* git add .
+* git commit -m "Push to Github"
+* git push origin master
+* Go back to Heroku and click "Deploy Branch"
+
+
 ##### back to [contents](#table-of-contents)  
 
 ---
 ## Credits
 
-### Content
-
-- [The Record Bloke](https://therecordbloke.com) 
-- [Wasted Heroes](https://www.wastedheroes-shop.com/)
-
 ### Resources
 
 - [Code Institute](https://learn.codeinstitute.net/)
 - [Typewolf](https://www.typewolf.com/google-fonts)
-- [Design Shack](https://designshack.net/articles/trends/best-website-color-schemes/)
+- [99 Designs](https://99designs.co.uk/)
 - [Unsplash](https://unsplash.com/)
-- [Bootstrap components](https://getbootstrap.com/)
+- [Materialize](https://materializecss.com/)
 - [W3schools](https://www.w3schools.com/)
 - [Code institute's Slack workspace channels](https://slack.com)
 - [CSS tricks](https://css-tricks.com/) 
 - [Stack Overflow](https://stackoverflow.com/)
-- [Hover.css](https://ianlunn.github.io/Hover/#effects)
-- [CSS Gradient](https://cssgradient.io/gradient-backgrounds/)
 
 ### Acknowledgements
 
-- [The Record Bloke](https://therecordbloke.com) 
-- [Wasted Heroes](https://www.wastedheroes-shop.com/)
 - Various people at the [code institute](https://codeinstitute.net/) and on the code institute Slack channel.
 - Various people at [LinkedIn](https://www.linkedin.com/)
 - My career consultant Stuart Crang.
