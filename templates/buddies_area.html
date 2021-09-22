@@ -10,7 +10,8 @@
             <ul class="collapsible popout">
                 {% for event in events %}
                 <li>
-                    <div class="collapsible-header"><i class="fas fa-monument"></i>{{ event.event_name }}
+                    <div class="collapsible-header"><i class="fas fa-monument"></i>
+                        <h4><strong>{{ event.event_name }}</strong></h4>
                         <div class="col s3">
                             <a href="{{ url_for('edit_your_event', event_id=event._id) }}"
                                 class="btn-small green accent-4">Edit</a>

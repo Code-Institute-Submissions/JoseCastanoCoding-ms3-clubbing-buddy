@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.carousel').carousel();
+    $('.slider').slider();
     $('.sidenav').sidenav({edge: "right"});
     $('.datepicker').datepicker({format: "dd-mm-yyyy"});
     $('select').formSelect();

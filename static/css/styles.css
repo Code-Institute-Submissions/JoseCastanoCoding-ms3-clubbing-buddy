@@ -9,7 +9,7 @@ main {
 }
 
 main .container {
-    margin-top: 140px;
+    margin-top: 75px;
 }
 
 nav .brand-logo {
@@ -35,4 +35,8 @@ nav .brand-logo {
 
 #signup {
     margin-bottom: 20px;
+}
+
+.fa-monument {
+    padding-top: 35px;
 }
