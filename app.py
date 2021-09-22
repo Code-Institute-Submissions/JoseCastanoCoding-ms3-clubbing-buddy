@@ -85,11 +85,17 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/all_events")
+def all_events():
+    events = list(mongo.db.events.find())
+    return render_template("all_events.html", events=events)
+    
+
 @app.route("/search_event", methods=["GET", "POST"])
 def search_event():
-    search = request.form.get("search")
-    events = list(mongo.db.events.find({"$text": {"$search_event": search}}))
-    return render_template("buddies_area.html", events=events)
+    query = request.form.get("query")
+    events = list(mongo.db.events.find({"$text": {"$search": query}}))
+    return render_template("all_events.html", events=events)
 
 
 @app.route("/buddies_area/<username>", methods=["GET", "POST"])

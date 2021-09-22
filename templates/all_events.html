@@ -1,0 +1,56 @@
+{% extends "base_template.html" %}
+{% block content %}
+
+    <div class="container">
+        <div class="row card hoverable">
+            <div class="card-content">
+                <form action="{{ url_for('search_event') }}" method="POST" class="col s12">
+                    <div class="input-field col s12 m8">
+                        <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+                        <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                        <label for="query">Search Events</label>
+                    </div>
+                    <div class="col s12 m4">
+                        <a href="{{ url_for('buddies_area', username=session['user']) }}" class="red btn text-shadow">Reset</a>
+                        <button type="submit" class="light-blue darken-1 btn text-shadow">
+                            <i class="fas fa-search left"></i> Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row card hoverable">
+            <div class="card-content">
+                <h4 class="center black-text"><strong>Hello! {{ username }}</strong></h4>
+                <h4 class="center black-text"><strong>These Are Your Events {{ username }}</strong></h4>
+            </div>
+            <ul class="collapsible popout">
+                {% for event in events %}
+                <li>
+                    <div class="collapsible-header"><i class="fas fa-monument"></i>{{ event.event_name }}
+                        <div class="col s3">
+                            <a href="{{ url_for('edit_your_event', event_id=event._id) }}"
+                                class="btn-small green accent-4">Edit</a>
+                            <a href="{{ url_for('delete_your_event', event_id=event._id) }}"
+                                class="btn-small green accent-4">Delete</a>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <h5><i class="fas fa-place-of-worship"></i> Type of Event: {{event.type_of_event}}</h5>
+                        <h5><i class="fas fa-music"></i> Type of Music: {{event.type_of_music}}</h5>
+                        <h5><i class="fas fa-calendar-alt"></i> Date: {{event.event_date}}</h5>
+                        <h5><i class="fas fa-globe"></i> Where: {{event.event_location}}</h5>
+                        <h5><i class="fas fa-user"></i> Event Added By: {{event.created_by}}</h5>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
