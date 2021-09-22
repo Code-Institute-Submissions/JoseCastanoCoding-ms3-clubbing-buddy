@@ -29,6 +29,17 @@ nav .brand-logo {
     position: inherit;
 }
 
+.btn.btn-large {
+    background-color: #e65100;
+    color: #212121;
+    font-weight: 700;
+}
+
+.btn-small {
+    color: #212121;
+    font-weight: 700;
+}
+
 #login {
     margin-bottom: 20px;
 }

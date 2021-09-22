@@ -47,29 +47,27 @@ The website has been designed to be responsive, intuitive and accessible on a ra
 
 ## User Experience
 
-Clubbing Buddy facilitates users with the ability to create an account and have personal login credentials. Once fully registered, users can submit forms with the corresponding information about the event they have on their radar. Users can have visibility of other users profiles in order to connect with them and, potentially, go to events together.
+Clubbing Buddy allow users to create an account and have personal login credentials. Once fully registered, users can submit forms with the corresponding information about the event they are planning to attend. Users can have visibility of other users profiles in order to connect with them and, potentially, go to events together.
 
 ## User stories
 
 -  ### <h3>First Time Visitor Goals</h3>
 
-    1. As a First Time Visitor, I want to open an account and have my own login credentials.
-    2. As a First Time Visitor, I want to submit an event I am planning to attend. 
-    3. As a First Time Visitor, I want to get in touch with the real people behind Clubbing Buddy, and ask some questions about the platform.
+    1. As a First Time Visitor, I want to take a first look at the website and evaluate its functionalities.
+    2. As a First Time Visitor, I want to open an account and have my own login credentials.
+    3. As a First Time Visitor, I want to get in touch with other users of the platform.
 
 -  ### <h3>Returning Visitor Goals</h3>
 
-    1. As a Returning Visitor, I would like to check other users profiles and see whether there are any events I could join.
-    2. As a Returning Visitor, 
-    3. As a Returning Visitor, I would like to keep interacting with the owners of the site, by sending them an enquiry about anything in regards to the information displayed about the trail, location or key characteristics of it.
+    1. As a Returning Visitor, I would like to submit an event I am planning to attend.
+    2. As a Returning Visitor, I would like to check other events and see whether there are any that match with my preferences.
+    3. As a Returning Visitor, I would like to edit/delete some of my events in my account.
 
 ## Design
 
 - ### <h3>Colour Scheme</h3>
 
-I wanted to keep the design of the website simple and neat. I have applied a hero image to be the main background of the website, please see below:
-
-<img src="assets/images/hero-image.jpg" width="600" height="400" />
+I wanted to keep the design of the website simple and neat. I have applied a slider to be the main background of the homepage, and that contains 4 of my own pictures which I downloaded from the website <a href="https://unsplash.com/">Unsplash</a>. Please see below:
 
 I picked a combination of colours that I consider to be eye-catching, and that does not take the attention of the user away from the main goal of the website. 
 
@@ -77,24 +75,43 @@ I picked a combination of colours that I consider to be eye-catching, and that d
 
 There are 2 dominant colours that can be identified on my site:
 
-- <strong>Black galvanised (rgb(26, 23, 23))</strong> : Used as the background colour for the header, footer and the drop down menus as well as the result box (where the trail is revealed once the user has made their choices).
-- <strong>Intense Orange (#ff3b00eb)</strong> : Used as the colour of the text displayed on the header, footer and the drop down menus as well as the result box (where the trail is revealed once the user has made their choices).
+- <strong>Orange Darken 4 (#e65100)</strong> : Used as the background colour for the header, footer and all the buttons but the ones in the searh box that sits above all the events in #all_events.html 
+- <strong>Color Hex (#212121)</strong> : Used as the colour of the text displayed on the header, footer and all the rest of the content in the website
 
 - ### <h3>Typography</h3>
 
-The font I used for all the website is "Space Grotesk".
+The font I used for all the website is "M PLUS Rounded 1c".
 
-<img src="assets/images/font.PNG" width="1000" height="150" />
+<img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632286463/google_font_vj0anw.png" width="1000" height="150" />
 
 - ### <h3>Imagery</h3>
 
-All the images I used for my project can be found in the following [link](assets/images) 
+All the images I used for my project can be seen as below:
 
-I used the site [Unsplash](https://unsplash.com/) to download all my images, with the exception of the ones corresponding to the mountain bike trails I have based my website on. I acquired those one via facebook groups where I am a member of.
+<div>
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1631410873/7f811e7ff8d949f7b671ddf6f29ae372_dlqzlc.png" width="300" height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1631410877/matty-adame-nLUb9GThIcg-unsplash_psdvzr.jpg" width="300" height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1631413411/sam-moqadam-DFaxMax8wcc-unsplash_y49j7s.jpg" width="300"
+    height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632274620/hanny-naibaho-aWXVxy8BSzc-unsplash_z6ouzv.jpg" width="300" height="100" />
+</div>
+
+I used the site [Unsplash](https://unsplash.com/) to download all my images I have used in my project.
 
 ## Wireframes
 
-All the wireframes I drew can be found in the following [link](/workspace/east-sussex-mtb-trails/wireframes)
+### Smartphone Wireframes
+
+<div>
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Home_Page_eu8tbb.png" width="300" height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Login_jyjpaf.png" width="300" height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/SignUp_wclsvj.png" width="300"
+    height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Buddies_Area_wgycue.png" width="300" height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Add_your_event_rzl5o4.png" width="300" height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/Edit_your_event_ylwbrb.png" width="300" height="100" />
+    <img src="https://res.cloudinary.com/jose-cloudinary/image/upload/v1632287038/All_events_uedttl.png" width="300" height="100" />
+</div>
 
 ## Features
 
