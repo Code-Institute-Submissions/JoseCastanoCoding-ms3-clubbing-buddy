@@ -89,7 +89,7 @@ def login():
 def all_events():
     events = list(mongo.db.events.find())
     return render_template("all_events.html", events=events)
-    
+
 
 @app.route("/search_event", methods=["GET", "POST"])
 def search_event():
